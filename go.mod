@@ -1,4 +1,4 @@
-module github.com/johanbrandhorst/grpc-gateway-boilerplate
+module github.com/prk327/grpc-rest-crudapi
 
 go 1.16
 

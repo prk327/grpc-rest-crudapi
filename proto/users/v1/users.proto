@@ -9,7 +9,7 @@ import "protoc-gen-openapiv2/options/annotations.proto";
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {version: "1.0"};
   external_docs: {
-    url: "https://github.com/johanbrandhorst/grpc-gateway-boilerplate";
+    url: "https://github.com/prk327/grpc-rest-crudapi";
     description: "gRPC-gateway boilerplate repository";
   }
   schemes: HTTPS;

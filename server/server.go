@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	"github.com/gofrs/uuid"
-	usersv1 "github.com/johanbrandhorst/grpc-gateway-boilerplate/proto/users/v1"
+	usersv1 "github.com/prk327/grpc-rest-crudapi/proto/users/v1"
 )
 
 // Backend implements the protobuf interface
