@@ -1,0 +1,63 @@
+syntax = "proto3";
+package crud;
+option go_package = "./proto";
+
+import "google/api/annotations.proto";
+
+service CrudService {
+  rpc CreateItem(CreateItemRequest) returns (ItemResponse) {
+    option (google.api.http) = {
+      post: "/v1/items"
+      body: "*"
+    };
+  }
+  
+  rpc GetItem(GetItemRequest) returns (ItemResponse) {
+    option (google.api.http) = {
+      get: "/v1/items/{id}"
+    };
+  }
+  
+  rpc UpdateItem(UpdateItemRequest) returns (ItemResponse) {
+    option (google.api.http) = {
+      put: "/v1/items/{id}"
+      body: "*"
+    };
+  }
+  
+  rpc DeleteItem(DeleteItemRequest) returns (DeleteItemResponse) {
+    option (google.api.http) = {
+      delete: "/v1/items/{id}"
+    };
+  }
+}
+
+// Keep existing message definitions unchanged
+message CreateItemRequest {
+  string name = 1;
+  string description = 2;
+}
+
+message GetItemRequest {
+  string id = 1;
+}
+
+message UpdateItemRequest {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message DeleteItemRequest {
+  string id = 1;
+}
+
+message ItemResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message DeleteItemResponse {
+  bool success = 1;
+}
